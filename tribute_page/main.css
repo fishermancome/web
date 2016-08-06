@@ -1,0 +1,93 @@
+*{
+	margin:0;
+	padding:0;
+	font-family:Arial; 
+}
+body{
+	margin-top: 60px;
+
+}
+.wrap{
+	width: 1000px;
+	margin-left:188px;
+	background-color: #cdcdcd;
+}
+.main_title h1{
+	padding-top: 50px;
+	text-align: center;
+	margin-bottom:5px;
+	font-size: 40px; 
+	font-style: bold;
+	font-family: Arial;
+}
+.vice_title h2{
+	text-align: center;
+	font-style: italic;
+}
+
+img{
+	margin:0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 980px;
+}
+.image p{
+	padding-top:10px;
+	text-align: center;
+	font-style: bold;
+	font-size: 20px;
+}
+.course_title p{
+	margin-top: 20px;
+	padding-left:200px;
+	font-size: 25px;
+	font-weight: bold;
+}
+.course{
+	padding-right: 200px;
+}
+.course ul {
+	padding-left: 230px;
+	
+}
+.course ul li{
+	line-height: 25px;
+}
+.course span{
+	font-weight: bold;
+	line-height: 20px;
+}
+.repu{
+	padding-left: 200px;
+}
+
+.repu p{
+	margin-top: 20px;
+	font-size: 20px;
+}
+.repu span{
+	font-size: 10px;
+}
+
+.info p{
+	padding-top: 20px;
+	padding-left: 200px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.info a{
+	text-decoration: none;
+}
+.footer p{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.footer a{
+	
+	text-decoration: none;	
+}
+.foorter a:hover{
+	background-color: #234;
+}
