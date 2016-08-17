@@ -1,0 +1,83 @@
+.navbar{
+  background-color: #222;
+}
+#lis li a:hover{
+  color:#fc6;
+}
+body{
+  background: #33003d;
+  font-size: 12px;
+  font-family: Arial;
+}
+ul{
+  list-style: none;
+}
+.container{
+  width: 860px;
+  margin:0 auto;
+  background: #ccc;
+}
+
+.jumbotron{
+  border-radius: 10px;
+  padding: 15px;
+}
+h1,h2{
+    color:#33003d;
+    text-align: center;
+}
+.content{
+  margin: 0 auto;
+  background: #fff;
+  width: 500px;
+}
+#me p{
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 16px;
+}
+hr{
+  border-color:#33003d;
+}
+#portfolio,#contact{
+  color: #33003d;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.img-thumbnail{
+  margin-bottom: 50px;
+  width: 400px;
+  height: 400px;
+}
+
+#button ul li {
+  display: block;
+  background: white;
+  margin-bottom: 10px;
+  margin-left:50px;
+  width: 300px;
+  height: 30px;
+}
+#button ul li a{
+ color: #000;
+}
+#button ul li a:hover{
+  font-size: 15px;
+ color: #000;
+ background: orangered;
+}
+#talk p{
+  width: 300px;
+  height: 30px;
+  font-size: 16px;
+}
+
+#footer p{
+  font-size: 20px;
+  letter-spacing: 2px;
+  color:#33003d;
+  text-align: center;
+}
