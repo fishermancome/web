@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>立体导航条</title>
+	<style>
+		body{
+		  background: #ebebeb;
+		}
+		.nav{
+		  width:560px;
+		  height: 50px;
+		  font:bold 0/50px Arial;
+		  text-align:center;
+		  margin:40px auto 0;
+	      background: #f65f57;
+		  border-radius: 10px;
+    	  box-shadow: 0px 5px #b64b41;
+		}
+		.nav a{
+		  display: inline-block;
+		  -webkit-transition: all 0.2s ease-in;
+		  -moz-transition: all 0.2s ease-in;
+		  -o-transition: all 0.2s ease-in;
+		  -ms-transition: all 0.2s ease-in;
+		  transition: all 0.2s ease-in;
+		}
+		.nav a:hover{
+		  -webkit-transform:rotate(360deg);
+		  -moz-transform:rotate(360deg);
+		  -o-transform:rotate(360deg);
+		  -ms-transform:rotate(360deg);
+		  transform:rotate(360deg);
+		}
+
+		.nav li{
+		  position:relative;
+		  display:inline-block;
+		  padding:0 16px;
+		  font-size: 13px;
+		  text-shadow:1px 2px 4px rgba(0,0,0,.5);
+		  list-style: none outside none;
+		}
+		
+		.nav li{background:linear-gradient(to bottom,#dd2926,#a82724,#dd2926) no-repeat right / 1px 15px;}
+       
+		.nav li:last-child{background:none;}
+		.nav a,
+		.nav a:hover{
+		  color:#fff;
+		  text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+<ul class="nav">
+	<li><a href="http://fishermancome.github.io">Home</a></li>
+	<li><a href="">About Me</a></li>
+	<li><a href="">Portfolio</a></li>
+	<li><a href="">Blog</a></li>
+	<li><a href="">Resources</a></li>
+	<li><a href="">Contact Me</a></li>
+</ul>
+</body>
+</html>
