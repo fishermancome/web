@@ -13,6 +13,7 @@ var milisec = 0;
 
 	function timer_callback(){
 		if(milisec>=9){
+			milisec = 0;
 			seconds += 1;
 		}
 		else{
@@ -87,6 +88,6 @@ var milisec = 0;
 		});
 		$('.start').on('click',start);
 		$('.stop').on('click',stop);
-		$('.reset').on(reset);
+		$('.reset').click(reset);
 	});
 
