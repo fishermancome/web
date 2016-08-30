@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Tillana');
+*{
+  margin:0;
+  padding:0;
+ }
+body{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#193366,#5b85d7) fixed;
+}
+.head{
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+h3{
+  font-family:  'Bree Serif', serif;
+  font-weight: bold;
+  color: #4da6ff;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#inputsth{
+  border-radius: 10px;
+  width: 200px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 3px;
+  background: transparent;
+  margin: 0 auto;
+  margin-left: 50px;
+
+}
+
+.search{
+  position: absolute;
+  left: 70px;
+  top: 100px;
+  
+}
+.random{
+  position: absolute;
+  right: 70px;
+  top: 100px;
+}
+.search,.random{
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  background: #4da6ff;
+  font-size: 20px;
+  font-family: 'Tillana', cursive;
+  text-align: center;
+}
+
+.screen{
+  text-align: center;
+}
+iframe{
+  width: 1024px;
+  height: 768px;
+  border:2px solid #4da6ff;
+  border-radius: 5px;
+}
