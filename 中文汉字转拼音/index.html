@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<style type="text/css">
+		#sel{
+			width: 513px;
+		}
+	</style>
+</head>
+<body>
+
+<select  id="sel">
+	<option value="带声调">带声调</option>
+	<option value="不带声调">不带声调</option>
+</select>
+<br/>
+<textarea cols="70" rows="10" id="text"></textarea>
+<br/>
+<br/>
+<textarea cols="70" rows="10" readonly="true" id="show"></textarea>
+<button id="btn">获取</button>
+
+
+<script type="text/javascript">
+	document.getElementById('btn').onclick=function(){
+		
+	$(document).ready(function(){
+
+		var str=$('#text').val();
+		var opt=$('#sel option:selected').text();
+		
+		url = 'https://helloacm.com/api/pinyin/?cached&s='+str+'&t=1';
+		$.ajax({
+			dataType:"json",
+			url:url,
+			cache:false,
+			success:function(res){
+				 if(opt ==="带声调"){
+				 	var arr = res['result'];
+					$("#show").html(arr.join(' '));
+				 }
+				 else{
+				 	var arr = res['result'];
+				 	var arr_two =[];
+				 	for(var i=0,len=arr.length;i<len;i++){
+				 		arr_two.push(arr[i].slice(0,arr[i].length-1));
+				 	}
+					$("#show").html(arr_two.join(' '));
+					
+				 }
+				
+			}
+		})
+	});}
+</script>
+</body>
+</html>
