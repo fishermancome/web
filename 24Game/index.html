@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>24 game</title>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<style type="text/css">
+	@import 'https://fonts.googleapis.com/css?family=Days+One';
+		*{
+			margin:0;
+			padding:0;
+		}
+		#get{
+			margin-left:20px;
+			padding-left: 5px;
+		}
+		#btn{
+			display: block;
+			width: 60px;
+			height: 30px;
+			background: #434589;
+			line-height: 30px;
+			color: #fff;
+			font-weight: bold;
+			border-radius: 5px;
+			text-align: center;
+		}
+		p{
+			width: 400px;
+			height: 30px;
+			line-height: 30px;
+			font-family: 'Days One', sans-serif;
+		}
+		#show{
+			width: 300px;
+			height: auto;
+			margin-top: 20px;
+			margin-left: 20px;
+			font-family: 'Days One', sans-serif;
+		}
+	</style>
+</head>
+<body>
+<div id="get">
+<p>the first poker card <input type="text" id="one" /></p>
+<p>the second poker card <input type="text" id="two" /></p>
+<p>the third poker card <input type="text" id="three" /></p>
+<p>the fourth poker card <input type="text" id="four" /></p>
+
+<a type="button" id="btn" >Get 24</a>
+</div>
+
+<div id="show"></div>
+<script type="text/javascript">
+
+	document.getElementById('btn').onclick=function(){
+	$(document).ready(function(){
+		
+		var one = $('#one').val();
+		var two = $('#two').val();
+		var three = $('#three').val();
+		var four = $('#four').val();
+		
+		url='https://helloacm.com/api/24/?a='+one+'&b='+two+'&c='+three+'&d='+four;
+		$.ajax({
+			dataType:"json",
+			cache:false,
+			url:url,
+			success:function(data){
+				var cnt =data['cnt'],
+					errorcode = data['errorCode'],
+					result = data['result'],
+					len=result.length;
+				if(errorcode === 0 && cnt!=0){
+					$('#show').append('<p>Count = '+cnt +'</p>')
+					for(var i=0;i<len;i++){
+						$('#show').append("<li>"+result[i]+"</li>");
+					}
+				}
+				else if(cnt ===0 && errorcode!=1){
+					$('#show').append('<p>cannot make up 24</p>')
+				}
+				else{
+					$('#show').append("<li>"+result+"</li>");
+				}
+				
+				console.log(cnt);
+				console.log(errorcode);
+				console.log(result);
+			}
+		})
+	});
+}
+</script>
+</body>
+</html>
