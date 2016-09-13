@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		p{
+			height: 40px;
+			margin-left: 50px;
+			margin-top: 10px;
+			font-family: Arial;
+
+		}
+		.func{
+			display: inline-block;
+			width: 50px;
+			height: 30px;
+			border-radius: 5px;
+			text-decoration: none;
+			background-color: #789;
+			color: #fff;
+			line-height: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+<div id="node" style="position:absolute;left:200px;top:55px;display:none;"><font size="5"><b>A</b></font></div>
+<p>
+<label>输入你的速度</label><input type="text" name="speed" id="speed">
+<a href="javascript:start();" class="func">strat</a>
+<a href="javascript:end();" class="func">end</a>
+</p>
+
+<script type="text/javascript">
+var timer = null,
+	timer1 = null,
+	count = 0,
+	total = 0;
+var keys = [],
+    currentKeys=[];//存放创建的字母节点
+
+var color = ['blue','grey','red','green','pink','orangered','purple','yellow']
+
+//生成26个字母
+for(var i=65;i<=90;i++){
+	keys.push(String.fromCharCode(i));
+}
+
+//获取节点
+function $$(id){
+	return document.getElementById(id);
+}
+
+//开始
+function start(){
+	var speed = $$('speed').value;
+	if(speed != ""){
+		timer = setInterval(createNode,parseInt(speed));
+	}
+	else {
+		timer = setInterval(createNode,1000);
+	}
+}
+
+//结束
+function end(){
+	clearInterval(timer);
+	currentKeys = [];//清除字母节点数组
+}
+
+function createNode(){
+	var fir = document.getElementById('node');
+	var div = fir.cloneNode(true);
+	
+	//新节点的位置
+	div.style.top = 55+'px';
+	div.style.left = Math.abs(Math.random()*screen.width-68)+'px';
+	div.style.display ='';
+	div.style.color = color[Math.floor(Math.random()*color.length)];
+	var keyIndex = Math.floor(Math.random()*keys.length);
+	div.innerHTML = `<font size = '5'><b>${keys[keyIndex]}</b></font>`;
+	document.body.appendChild(div);
+	move(div);
+	div.keyCode = keys[keyIndex];
+	currentKeys.push(div);
+	//console.log(currentKeys.length);
+}
+function move(id){
+	function moveNext(){
+		var top = parseInt(id.style.top);
+		if(top<500){
+			id.style.top = top +10+'px';
+		}
+		else{
+			id.style.display='none';
+		}
+	}
+	time1 = setInterval(moveNext,200);
+}
+
+//判断输入的和下落的是否一样，如果一样则该节点的display为none
+function checkNode(e){
+	e = e ||event;
+	for (var i=0;i<currentKeys.length;i++){
+		if(String.fromCharCode(e.keyCode)==currentKeys[i].keyCode){
+			currentKeys[i].style.display='none';
+			console.log('same');
+			break;
+		}
+		else{
+			console.log('diff');
+		}
+	}
+}
+
+document.addEventListener('keydown',checkNode,false);
+
+</script>
+</body>
+</html>
