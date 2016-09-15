@@ -1,0 +1,29 @@
+@import 'https://fonts.googleapis.com/css?family=Francois+One';
+@import 'https://fonts.googleapis.com/css?family=Rubik|Varela+Round';
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	background: #000;
+}
+h1{
+	font-size: 60px;
+	font-family: 'Francois One', sans-serif;
+	color: #fff;
+	margin:0 auto;
+	text-align: center;
+	margin-top: 100px;
+}
+#city,#TT,#icon{
+	width: 200px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: font-family: 'Varela Round', sans-serif;
+	font-family: 'Rubik', sans-serif;
+	color: #fff;
+	margin:0 auto;
+	text-align: center;
+}
+
